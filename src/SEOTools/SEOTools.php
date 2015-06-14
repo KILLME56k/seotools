@@ -93,4 +93,14 @@ class SEOTools implements SEOContract
 
         return $html;
     }
+
+    /**
+     * Takes the title formatted for display
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->metatags()->getTitle() ?: $this->config->get('defaults.title', null);
+    }
 }
